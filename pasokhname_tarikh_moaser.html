@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پاسخنامه تاریخ معاصر ایران</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f7f5f0; --surface: #ffffff; --surface-alt: #f0ede6;
+    --text-main: #1a1814; --text-sub: #5a574f; --text-muted: #8c8880;
+    --border: rgba(0,0,0,0.09); --border-strong: rgba(0,0,0,0.15);
+    --accent: #7c4a1e; --accent-bg: #f5ede3; --accent-border: #d4956a;
+    --gold: #b8860b; --gold-bg: #fdf8ed; --gold-border: #e8c96b;
+    --score-bg: #e8f4ed; --score-text: #1d6b3a; --score-border: #6dba8e;
+    --divider: rgba(0,0,0,0.06);
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  }
+  body { font-family: 'Vazirmatn', sans-serif; background: var(--bg); color: var(--text-main); min-height: 100vh; padding: 2rem 1rem 4rem; direction: rtl; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 860px; margin: 0 auto; }
+  .header { background: var(--surface); border-radius: 16px; border: 0.5px solid var(--border-strong); padding: 2.5rem 2.5rem 2rem; margin-bottom: 1.5rem; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: 0; right: 0; left: 0; height: 4px; background: linear-gradient(90deg, #b8860b 0%, #d4956a 40%, #7c4a1e 100%); }
+  .header-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--gold-bg); border: 0.5px solid var(--gold-border); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 500; color: var(--gold); margin-bottom: 1rem; }
+  .header h1 { font-size: 26px; font-weight: 700; color: var(--text-main); line-height: 1.4; margin-bottom: 0.4rem; }
+  .header h2 { font-size: 15px; font-weight: 400; color: var(--text-sub); margin-bottom: 1.5rem; }
+  .header-meta { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-sub); }
+  .meta-icon { width: 28px; height: 28px; border-radius: 8px; background: var(--surface-alt); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+  .meta-label { color: var(--text-muted); }
+  .meta-value { font-weight: 600; color: var(--text-main); }
+  .score-banner { background: var(--score-bg); border: 0.5px solid var(--score-border); border-radius: 12px; padding: 1rem 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .score-banner-text { font-size: 14px; color: var(--score-text); font-weight: 500; }
+  .score-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .score-pill { background: white; border: 0.5px solid var(--score-border); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 600; color: var(--score-text); }
+  .questions { display: flex; flex-direction: column; gap: 1rem; }
+  .q-card { background: var(--surface); border-radius: 14px; border: 0.5px solid var(--border); overflow: hidden; box-shadow: var(--shadow); transition: box-shadow 0.15s ease; }
+  .q-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.09), 0 8px 24px rgba(0,0,0,0.06); }
+  .q-header { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 1.5rem; border-bottom: 0.5px solid var(--divider); background: var(--surface-alt); }
+  .q-num { min-width: 36px; height: 36px; background: var(--accent); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+  .q-title-area { flex: 1; }
+  .q-title { font-size: 15px; font-weight: 600; color: var(--text-main); line-height: 1.6; }
+  .q-score-badge { display: flex; align-items: center; gap: 4px; background: var(--score-bg); border: 0.5px solid var(--score-border); border-radius: 20px; padding: 3px 10px; font-size: 12px; font-weight: 700; color: var(--score-text); flex-shrink: 0; margin-top: 2px; }
+  .q-body { padding: 1.25rem 1.5rem; }
+  .q-answer { font-size: 14.5px; line-height: 1.9; color: var(--text-sub); }
+  .q-answer p { margin-bottom: 0.6rem; }
+  .q-answer p:last-child { margin-bottom: 0; }
+  .highlight-box { background: var(--accent-bg); border-right: 3px solid var(--accent-border); border-radius: 4px; padding: 0.75rem 1rem; margin: 0.5rem 0; font-size: 14px; line-height: 1.7; color: var(--text-main); }
+  .highlight-box strong { color: var(--accent); }
+  .footer { text-align: center; margin-top: 2rem; padding: 1.5rem; background: var(--surface); border-radius: 12px; border: 0.5px solid var(--border); }
+  .footer-author { font-size: 13px; color: var(--text-muted); }
+  .footer-author strong { color: var(--text-sub); }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111009; --surface: #1c1a16; --surface-alt: #252319; --text-main: #f0ede5; --text-sub: #a09c94; --text-muted: #6b6862; --border: rgba(255,255,255,0.07); --border-strong: rgba(255,255,255,0.12); --accent: #d4956a; --accent-bg: rgba(212,149,106,0.1); --accent-border: rgba(212,149,106,0.3); --gold: #e8c96b; --gold-bg: rgba(232,201,107,0.08); --gold-border: rgba(232,201,107,0.25); --score-bg: rgba(109,186,142,0.1); --score-text: #6dba8e; --score-border: rgba(109,186,142,0.3); --divider: rgba(255,255,255,0.05); --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.2); }
+  }
+  @media (max-width: 600px) {
+    .header { padding: 1.5rem 1.25rem; }
+    .q-header { padding: 1rem 1rem; }
+    .q-body { padding: 1rem 1rem; }
+    .header-meta { gap: 1rem; }
+    .score-pills { gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="header-badge">📋 ارزشیابی پایانی</div>
+    <h1>پاسخنامه تاریخ معاصر ایران</h1>
+    <h2>پایه یازدهم — دوره دوم متوسطه</h2>
+    <div class="header-meta">
+      <div class="meta-item"><div class="meta-icon">❓</div><span class="meta-label">تعداد سؤالات:</span><span class="meta-value">۹ سؤال</span></div>
+      <div class="meta-item"><div class="meta-icon">🏆</div><span class="meta-label">نمره کل:</span><span class="meta-value">۱۰ نمره</span></div>
+      <div class="meta-item"><div class="meta-icon">📚</div><span class="meta-label">درس:</span><span class="meta-value">تاریخ معاصر</span></div>
+    </div>
+  </div>
+  <div class="score-banner">
+    <span class="score-banner-text">✅ نمرات سؤال‌ها</span>
+    <div class="score-pills">
+      <span class="score-pill">سؤال ۱ — ۱ نمره</span><span class="score-pill">سؤال ۲ — ۱ نمره</span><span class="score-pill">سؤال ۳ — ۱ نمره</span><span class="score-pill">سؤال ۴ — ۱ نمره</span><span class="score-pill">سؤال ۵ — ۱.۵ نمره</span><span class="score-pill">سؤال ۶ — ۱ نمره</span><span class="score-pill">سؤال ۷ — ۱ نمره</span><span class="score-pill">سؤال ۸ — ۱.۵ نمره</span><span class="score-pill">سؤال ۹ — ۱ نمره</span>
+    </div>
+  </div>
+  <div class="questions">
+    <div class="q-card">
+      <div class="q-header"><div class="q-num">۱</div><div class="q-title-area"><div class="q-title">حرکت مردم پس از شهریور ۱۳۲۰ بر چه پایه‌هایی استوار بود؟</div></div><div class="q-score-badge">۱ نمره</div></div>
+      <div class="q-body"><div class="q-answer"><p>این حرکت که <strong>دوازده سال</strong> (از شهریور ۱۳۲۰ تا مرداد ۱۳۳۲) به درازا کشید، بر دو پایه عمده استوار بود:</p><div class="highlight-box"><strong>۱.</strong> جلوگیری از بازگشت دیکتاتوری پهلوی<br><strong>۲.</strong> کوتاه کردن دست استعمار (بیگانگان)</div><p>در این راه رهبران مذهبی و ملی دست به دست هم دادند و سرانجام به محدود شدن قدرت دربار و ملی شدن صنعت نفت انجامید؛ اما به دلیل دسیسه بیگانگان، اختلافات داخلی و فقدان رهبری مقتدر، این نهضت به نتیجه نهایی نرسید و پس از کودتای ۲۸ مرداد، دیکتاتوری و سلطه بیگانه بار دیگر بر کشور حاکم شد.</p></div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-header"><div class="q-num">۲</div><div class="q-title-area"><div class="q-title">قرارداد کنسرسیوم نفت را توضیح دهید.</div></div><div class="q-score-badge">۱ نمره</div></div>
+      <div class="q-body"><div class="q-answer"><p>قرارداد کنسرسیوم نفت (۱۳۳۳) یک <strong>قرارداد استعماری</strong> بود که میان ایران و چند شرکت نفتی آمریکایی، انگلیسی، فرانسوی و هلندی، توسط حکومت دست‌نشانده شاه به ایران تحمیل شد.</p><div class="highlight-box">این قرارداد مغایر با قانون ملی شدن صنعت نفت بود و بار دیگر نفت ایران را زیر سیطره بیگانگان درآورد و تمام ثمرات مبارزه ملت ایران را بر باد داد.</div><p>یکی از بندهای آن، پرداخت غرامت از سوی ایران به شرکت سابق نفت انگلیس و ایران بود. در پی آن، حضور فزاینده مستشاران آمریکایی، سرنوشت سیاسی، اقتصادی و نظامی ایران را زیر سلطه نوین آمریکا برد.</p></div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-header"><div class="q-num">۳</div><div class="q-title-area"><div class="q-title">چرا شاه در ۱۷ فروردین ۱۳۴۳، امام خمینی را آزاد کرد؟</div></div><div class="q-score-badge">۱ نمره</div></div>
+      <div class="q-body"><div class="q-answer"><p>با روی کار آمدن دولت <strong>حسنعلی منصور</strong> که نیازمند آرامش برای اجرای سیاست‌هایش بود، شاه با دو هدف اقدام به آزادی امام خمینی کرد:</p><div class="highlight-box"><strong>۱.</strong> جلب رضایت امام خمینی<br><strong>۲.</strong> ترس از روی‌آرویی با قیامی دیگر</div><p>با این حال، امام خمینی همچنان بر استمرار مبارزه پافشاری کرد.</p></div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-header"><div class="q-num">۴</div><div class="q-title-area"><div class="q-title">دو مورد از برنامه‌های فرهنگی اجرا شده توسط رژیم پهلوی در فاصله سال‌های ۴۳ تا ۵۶ را نام ببرید.</div></div><div class="q-score-badge">۱ نمره</div></div>
+      <div class="q-body"><div class="q-answer"><div class="highlight-box"><strong>۱.</strong> برگزاری جشن‌های تاجگذاری و جشن‌های ۲۵۰۰ ساله شاهنشاهی با هدف کسب اعتبار کاذب و پیوند دادن حکومت با کوروش هخامنشی.</div><div class="highlight-box"><strong>۲.</strong> تغییر تقویم هجری شمسی به تقویم شاهنشاهی، که در نهایت به تضعیف مؤلفه‌های هویت ملی و دینی منجر شد.</div></div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-header"><div class="q-num">۵</div><div class="q-title-area"><div class="q-title">محمدرضا شاه پهلوی قدرتش را بر چه پایه‌هایی استوار ساخته بود؟ (سه مورد)</div></div><div class="q-score-badge">۱.۵ نمره</div></div>
+      <div class="q-body"><div class="q-answer"><p>محمدرضا شاه قدرتش را بر سه پایه استوار ساخته بود:</p><div class="highlight-box"><strong>۱.</strong> دیوانسالاری دولتی<br><strong>۲.</strong> دربار<br><strong>۳.</strong> ارتش</div></div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-header"><div class="q-num">۶</div><div class="q-title-area"><div class="q-title">از دیدگاه امام خمینی بهترین راه مبارزه با حکومت محمدرضا شاه چه بود؟</div></div><div class="q-score-badge">۱ نمره</div></div>
+      <div class="q-body"><div class="q-answer"><p>از دیدگاه امام خمینی، بهترین راه مبارزه با شاه:</p><div class="highlight-box"><strong>افزایش آگاهی عمومی</strong> و <strong>بسیج همگانی مردم</strong> برای یک مبارزه فراگیر بود.</div><p>ایشان مبارزه را به عنوان یک <strong>وظیفه اسلامی و تکلیف شرعی</strong> می‌نگریست، نه صرفاً یک اقدام سیاسی.</p></div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-header"><div class="q-num">۷</div><div class="q-title-area"><div class="q-title">فضای باز سیاسی را تعریف کنید.</div></div><div class="q-score-badge">۱ نمره</div></div>
+      <div class="q-body"><div class="q-answer"><p>فضای باز سیاسی، شعاری بود که شاه پس از روی کار آمدن <strong>جیمی کارتر</strong> (با شعار «حقوق بشر» و «فضای باز سیاسی») برای نشان دادن هماهنگی خود با این سیاست مطرح کرد.</p><p>از جمله اقدامات آن:</p><div class="highlight-box"><strong>۱.</strong> برکناری هویدا و روی کار آمدن جمشید آموزگار<br><strong>۲.</strong> لغو دادگاه‌های نظامی سّری و علنی شدن محاکمات<br><strong>۳.</strong> تشکیل «کمیسیون شاهنشاهی برای مبارزه با فساد»</div><p>در واقع طرح فضای باز سیاسی و حقوق بشر بیش از آنکه اصلاحی واقعی باشد، یک <strong>شعار تبلیغاتی</strong> بود.</p></div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-header"><div class="q-num">۸</div><div class="q-title-area"><div class="q-title">دیدگاه شورای امنیت ملی آمریکا و وزارت خارجه آمریکا، در مورد چگونگی مقابله با انقلاب اسلامی را مقایسه کنید.</div></div><div class="q-score-badge">۱.۵ نمره</div></div>
+      <div class="q-body"><div class="q-answer"><p>در آستانه پیروزی انقلاب، میان دستگاه‌های سیاست‌گذار آمریکا اختلاف نظر وجود داشت:</p><div class="highlight-box" style="border-right-color:#c0392b;background:rgba(192,57,43,0.07)"><strong style="color:#c0392b">شورای امنیت ملی آمریکا:</strong><br>به دنبال اجرای کودتا و به راه انداختن جوی خون در ایران بود.</div><div class="highlight-box" style="border-right-color:#2980b9;background:rgba(41,128,185,0.07)"><strong style="color:#2980b9">کارتر، وزارت امور خارجه و سازمان سیا:</strong><br>به فکر فریب مردم از طریق جایگزین کردن بختیار به جای شاه و سوار شدن بر موج انقلاب بودند.</div><p>این اختلاف نظر، شرایط را برای کارتر و شاه وخیم‌تر کرد.</p></div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-header"><div class="q-num">۹</div><div class="q-title-area"><div class="q-title">کدام اصل از اصول قانون اساسی را امام خمینی ضد دیکتاتوری و مخالف استبداد دانسته‌اند؟</div></div><div class="q-score-badge">۱ نمره</div></div>
+      <div class="q-body"><div class="q-answer"><div class="highlight-box"><strong>اصل «ولایت فقیه»</strong></div><p>هنگامی که با جدی شدن تصویب اصول مربوط به ولایت فقیه در مجلس خبرگان قانون اساسی، مخالفت‌ها از سوی مخالفان بیشتر شد، امام خمینی، مردم و نیروهای انقالبی از این اصل دفاع کردند و آن را <strong>«ضد دیکتاتوری»</strong> و <strong>«مخالف استبداد»</strong> دانستند.</p></div></div>
+    </div>
+  </div>
+  <div class="footer"><div class="footer-author">طراحی و تنظیم: <strong>مهبد عروجی</strong></div></div>
+</div>
+</body>
+</html>
